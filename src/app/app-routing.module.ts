@@ -17,6 +17,10 @@ const routes: Routes = [
     path: 'createAccount',
     component: CreateAccountComponent,
   },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./page/dashboard/dashboard.module').then(m => m.DashboardModule)
+  }
 ];
 
 @NgModule({
