@@ -1,0 +1,26 @@
+<div style="width: 400px;margin:0px auto;">
+  <div [formGroup]="form">
+    <p> 建立帳號 </p>
+    <div>
+      帳號 : <input type="text" formControlName="account"/>
+    </div>
+    <div>
+      密碼 : <input type="password" formControlName="password"/>
+    </div>
+    <div>
+      使用者名稱 : <input type="text" formControlName="userName"/>
+    </div>
+    <div>
+      email : <input type="email" formControlName="email"/>
+    </div>
+    <div>
+      使用者群組 : <input type="text" formControlName="userGroup"/>
+    </div>
+  </div>
+  <div>
+    <button (click)="createAccount()">新增帳號</button>
+  </div>
+  <div>
+    <button (click)="backToLoginPage()">回登入頁</button>
+  </div>
+</div>

@@ -1,4 +1,15 @@
-<button (click)="getProduct()">research</button>
-<div *ngIf="data">
-  {{data | json}}
+<div style="border-width: 1px;border-style: solid;width: 400px;">
+  <p> login </p>
+  <div style="text-align: center;">
+    帳號 : <input />
+  </div>
+  <div style="text-align: center;">
+    密碼 : <input />
+  </div>
+  <div style="text-align: center;">
+    <button>登入</button>
+  </div>
+  <div style="text-align: center;">
+    <a routerLink="/createAccount" routerLinkActive="active">建立帳號</a>
+  </div>
 </div>
