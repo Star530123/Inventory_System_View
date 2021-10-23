@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 })
 export class CreateAccountService {
 
-  apiUrl = '';
+  apiUrl = 'api/user/';
   constructor(private http: HttpClientService) { }
 
   newUser(req: CreateAccountReq): Observable<CreateAccountRes> {
