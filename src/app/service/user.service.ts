@@ -1,3 +1,7 @@
+import { LoginRes } from './../model/Login/LoginRes';
+import { LoginReq } from './../model/Login/LoginReq';
+import { CreateAccountRes } from '../model/CreateAccount/NewUserRes';
+import { CreateAccountReq } from '../model/CreateAccount/NewUserReq';
 import { Observable } from 'rxjs';
 import { HttpClientService } from './http-client.service';
 import { Injectable } from '@angular/core';
@@ -7,9 +11,14 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private httpClient: HttpClientService) {}
+  apiUrl = 'api/user/';
+  constructor(private http: HttpClientService) {}
 
-  createAccount(req: any): Observable<any> {
-    return this.httpClient.postApi('newUser', req);
+  newUser(req: CreateAccountReq): Observable<CreateAccountRes> {
+    return this.http.postApi(this.apiUrl + 'newUser', req);
+  }
+
+  login(req: LoginReq): Observable<LoginRes> {
+    return this.http.postApi(this.apiUrl + 'login', req);
   }
 }

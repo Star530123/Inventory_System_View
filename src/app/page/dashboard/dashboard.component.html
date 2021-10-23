@@ -1,4 +1,7 @@
-<p>dashboard works!</p>
+<div>
+  登入者 : {{ accountDataServie.userName }}
+  <button (click)="logout()">登出</button>
+</div>
 <a routerLink="./category" routerLinkActive="active">類別</a>
 <div>
   <router-outlet></router-outlet>

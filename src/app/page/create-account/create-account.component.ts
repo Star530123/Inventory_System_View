@@ -1,5 +1,5 @@
-import { CreateAccountReq } from './../../model/request/CreateAccountReq';
-import { CreateAccountService } from './../../service/create-account.service';
+import { UserService } from './../../service/user.service';
+import { CreateAccountReq } from '../../model/CreateAccount/NewUserReq';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -19,22 +19,22 @@ export class CreateAccountComponent implements OnInit {
   });
   constructor(
     private router: Router,
-    private createAccountService: CreateAccountService
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {}
 
   createAccount(): void {
-    const newAccountReq: CreateAccountReq = {
+    const newUserReq: CreateAccountReq = {
       account: this.form.controls.account.value,
       password: this.form.controls.password.value,
       userName: this.form.controls.userName.value,
       email: this.form.controls.email.value,
       userGroup: this.form.controls.userGroup.value
     };
-    console.log(newAccountReq);
-    this.createAccountService
-      .newUser(newAccountReq)
+    console.log(newUserReq);
+    this.userService
+      .newUser(newUserReq)
       .subscribe((result) => {
         if (!result.success) {
           alert('新增帳號錯誤，請重新試一次');
