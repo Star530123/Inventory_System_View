@@ -1,8 +1,13 @@
 <div>
   登入者 : {{ accountDataServie.userName }}
+</div>
+<div style="display: inline;">
+  <a routerLink="./category" routerLinkActive="active">類別管理</a>
+  <a routerLink="./item" routerLinkActive="active">項目管理</a>
+  <a routerLink="./goods" routerLinkActive="active">貨物管理</a>
+  <a routerLink="./manu" routerLinkActive="active">廠商管理</a>
   <button (click)="logout()">登出</button>
 </div>
-<a routerLink="./category" routerLinkActive="active">類別</a>
 <div>
   <router-outlet></router-outlet>
 </div>

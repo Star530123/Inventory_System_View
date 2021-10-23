@@ -1,4 +1,4 @@
-import { UserService } from './../../service/user.service';
+import { UserService } from '../../service/user.service';
 import { CreateAccountReq } from '../../model/CreateAccount/NewUserReq';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -7,7 +7,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-create-account',
   templateUrl: './create-account.component.html',
-  styleUrls: ['./create-account.component.sass'],
+  styleUrls: ['./create-account.component.scss'],
 })
 export class CreateAccountComponent implements OnInit {
   form: FormGroup = new FormGroup({

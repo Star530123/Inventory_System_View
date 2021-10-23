@@ -1,4 +1,3 @@
-import { CategoryComponent } from './../category/category.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
@@ -11,7 +10,7 @@ const routes: Routes = [
       {
         path: 'category',
         loadChildren: () =>
-          import('../category/category.module').then((m) => m.CategoryModule),
+          import('./category/category.module').then((m) => m.CategoryModule),
       },
     ],
   },
