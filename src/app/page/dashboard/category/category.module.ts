@@ -1,17 +1,21 @@
+import { CategoryRoutingModule } from './category-routing.module';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CategoryRoutingModule } from './category-routing.module';
 import { CategoryComponent } from './category.component';
+import { NewCategoryComponent } from './new-category/new-category.component';
 
 
 @NgModule({
   declarations: [
-    CategoryComponent
+    CategoryComponent,
+    NewCategoryComponent
   ],
   imports: [
     CommonModule,
-    CategoryRoutingModule
+    CategoryRoutingModule,
+    FormsModule
   ]
 })
 export class CategoryModule { }

@@ -1,1 +1,26 @@
-<p>category works!</p>
+<h2>類別管理</h2>
+<div class="manage-page">
+  <div class="page-top">
+    類別名稱 : <input [(ngModel)]="categoryKeyword"/>
+    <button class="inquiry-button" (click)="inquiry()">查詢</button>
+    <a type="button" routerLink="./newCategory">
+      <button class="add-page-button">新增類別</button>
+    </a>
+  </div>
+  <div class="page-body">
+    <table *ngIf="isShowResult">
+      <thead>
+        <tr>
+          <th>類別序號</th>
+          <th>類別名稱</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categoryList">
+          <td>{{ category.categorySeq }}</td>
+          <td>{{ category.categoryName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

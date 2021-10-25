@@ -1,4 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+.manage-page {
+  margin-top: 50px;
+}
 
+.page-title {
+}
 
+.page-top {
+  display: flex;
+}
 
+.page-body {
+  margin-top: 50px;
+}
+
+.inquiry-button {
+  margin-left: 20px;
+}
+
+.add-button {
+  margin-left: 20px;
+}
+
+.add-page-button {
+  margin-left: 200px;
+}
+
+.back-button {
+  margin-top: 30px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
