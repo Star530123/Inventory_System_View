@@ -1,4 +1,4 @@
-export interface CreateAccountReq {
+export interface NewUserReq {
   account: string;
   password: string;
   userName: string;

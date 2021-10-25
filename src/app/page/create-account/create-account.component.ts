@@ -1,5 +1,5 @@
 import { UserService } from '../../service/user.service';
-import { CreateAccountReq } from '../../model/CreateAccount/NewUserReq';
+import { NewUserReq } from '../../model/create-account/NewUserReq';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -25,7 +25,7 @@ export class CreateAccountComponent implements OnInit {
   ngOnInit(): void {}
 
   createAccount(): void {
-    const newUserReq: CreateAccountReq = {
+    const newUserReq: NewUserReq = {
       account: this.form.controls.account.value,
       password: this.form.controls.password.value,
       userName: this.form.controls.userName.value,
