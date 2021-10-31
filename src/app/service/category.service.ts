@@ -1,3 +1,5 @@
+import { DeleteCategoryRes } from './../model/category/delete-category/DeleteCategoryRes';
+import { DeleteCategoryReq } from './../model/category/delete-category/DeleteCategoryReq';
 import { UpdateCategoryReq } from './../model/category/update-category/UpdateCategoryReq';
 import { Observable } from 'rxjs';
 import { NewCategoryRes } from './../model/new-category/NewCategoryRes';
@@ -20,5 +22,9 @@ export class CategoryService {
 
   updateCategory(req: UpdateCategoryReq): Observable<UpdateCategoryRes> {
     return this.http.postApi(this.apiUrl + 'updateCategory', req);
+  }
+
+  deleteCategory(req: DeleteCategoryReq): Observable<DeleteCategoryRes> {
+    return this.http.postApi(this.apiUrl + 'deleteCategory', req);
   }
 }
