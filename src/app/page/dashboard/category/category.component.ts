@@ -1,6 +1,8 @@
+import { Router } from '@angular/router';
 import { CategoryListRes } from './../../../model/category-list/CategoryListRes';
 import { CommonService } from './../../../service/common.service';
 import { Component, OnInit } from '@angular/core';
+import { Path } from 'src/app/path';
 
 @Component({
   selector: 'app-category',
@@ -12,7 +14,7 @@ export class CategoryComponent implements OnInit {
   categoryList!: CategoryListRes[];
   categoryKeyword = '';
   isShowResult = false;
-  constructor(private commonService: CommonService) {}
+  constructor(private commonService: CommonService, private router: Router) {}
 
   ngOnInit(): void {
     this.commonService
@@ -25,5 +27,9 @@ export class CategoryComponent implements OnInit {
     this.categoryList = this.originCategoryList.filter(
       (category) => category.categoryName.indexOf(this.categoryKeyword) !== -1
     );
+  }
+
+  update(category: CategoryListRes): void {
+    this.router.navigate([Path.updateCategory], { state: { category } });
   }
 }

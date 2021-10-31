@@ -5,12 +5,14 @@ import { CommonModule } from '@angular/common';
 
 import { CategoryComponent } from './category.component';
 import { NewCategoryComponent } from './new-category/new-category.component';
+import { UpdateCategoryComponent } from './update-category/update-category.component';
 
 
 @NgModule({
   declarations: [
     CategoryComponent,
-    NewCategoryComponent
+    NewCategoryComponent,
+    UpdateCategoryComponent
   ],
   imports: [
     CommonModule,

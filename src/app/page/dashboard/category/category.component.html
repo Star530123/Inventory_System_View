@@ -13,12 +13,14 @@
         <tr>
           <th>類別序號</th>
           <th>類別名稱</th>
+          <th>功能</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let category of categoryList">
           <td>{{ category.categorySeq }}</td>
           <td>{{ category.categoryName }}</td>
+          <td> <button (click)="update(category)">更新</button></td>
         </tr>
       </tbody>
     </table>
