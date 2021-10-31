@@ -1,14 +1,22 @@
 <h2>類別管理 > 更新類別</h2>
 <div class="manage-page">
   <div class="page-top">
-    類別序號 : {{ oldCategory.categorySeq }}
+    <div>
+      類別序號 : {{ oldCategory.categorySeq }}
+    </div>
+    <div>
+      舊類別名稱 : {{ oldCategory.categoryName }}
+    </div>
+    <div>
+      新類別名稱 : <input [(ngModel)]="newCategory.categoryName" />
+    </div>
   </div>
-  <div class="page-top">
-    舊類別名稱 : {{ oldCategory.categoryName }}
+  <div>
   </div>
-  <div class="page-top">
-    新類別名稱 : <input [(ngModel)]="newCategory.categoryName" />
-    <button class="add-button" (click)="updateCategory()">更新</button>
-  </div>
+</div>
+<div>
+  <button class="add-button" (click)="updateCategory()">更新</button>
+</div>
+<div>
   <button class="back-button" (click)="goBack()">返回</button>
 </div>

@@ -7,28 +7,28 @@
       <button class="add-page-button">新增類別</button>
     </a>
   </div>
-  <div class="page-body" *ngIf="isShowResult">
-    <div *ngIf="categoryList.length == 0">
-        查無資料
-    </div>
-    <table *ngIf="categoryList.length != 0">
-      <thead>
-        <tr>
-          <th>類別序號</th>
-          <th>類別名稱</th>
-          <th>功能</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let category of categoryList">
-          <td>{{ category.categorySeq }}</td>
-          <td>{{ category.categoryName }}</td>
-          <td>
-            <button (click)="update(category)">更新</button>
-            <button (click)="delete(category.categorySeq)">刪除</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+</div>
+<div class="page-body" *ngIf="isShowResult">
+  <div *ngIf="categoryList.length == 0">
+      查無資料
   </div>
+  <table *ngIf="categoryList.length != 0">
+    <thead>
+      <tr>
+        <th>類別序號</th>
+        <th>類別名稱</th>
+        <th>功能</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categoryList">
+        <td>{{ category.categorySeq }}</td>
+        <td>{{ category.categoryName }}</td>
+        <td>
+          <button (click)="update(category)">更新</button>
+          <button (click)="delete(category.categorySeq)">刪除</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

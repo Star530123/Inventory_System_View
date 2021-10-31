@@ -1,13 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 .manage-page {
   margin-top: 50px;
+  display: flex;
 }
 
 .page-title {
 }
 
 .page-top {
-  display: flex;
 }
 
 .page-body {
@@ -19,7 +19,6 @@
 }
 
 .add-button {
-  margin-left: 20px;
 }
 
 .add-page-button {
