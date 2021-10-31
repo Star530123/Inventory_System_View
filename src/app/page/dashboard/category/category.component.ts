@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { CategoryListRes } from './../../../model/category-list/CategoryListRes';
+import { CategoryListRes } from '../../../model/common/category-list/CategoryListRes';
 import { CommonService } from './../../../service/common.service';
 import { Component, OnInit } from '@angular/core';
 import { Path } from 'src/app/path';

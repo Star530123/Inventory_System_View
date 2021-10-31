@@ -1,9 +1,8 @@
-import { CategoryListRes } from './../../../../model/category-list/CategoryListRes';
-import { UpdateCategoryReq } from './../../../../model/category/UpdateCategoryReq';
-import { CategoryService } from './../../../../service/category.service';
-import { CategoryListReq } from './../../../../model/category-list/CategoryListReq';
+import { UpdateCategoryReq } from './../../../../model/category/update-category/UpdateCategoryReq';
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { CategoryListRes } from '../../../../model/common/category-list/CategoryListRes';
+import { CategoryService } from './../../../../service/category.service';
 
 @Component({
   selector: 'app-update-category',

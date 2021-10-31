@@ -1,5 +1,5 @@
 import { UserService } from '../../service/user.service';
-import { NewUserReq } from '../../model/create-account/NewUserReq';
+import { NewUserReq } from '../../model/category/create-account/NewUserReq';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';

@@ -1,5 +1,5 @@
-import { CategoryListRes } from './../model/category-list/CategoryListRes';
-import { CategoryListReq } from './../model/category-list/CategoryListReq';
+import { CategoryListRes } from '../model/common/category-list/CategoryListRes';
+import { CategoryListReq } from '../model/common/category-list/CategoryListReq';
 import { Injectable } from '@angular/core';
 import { HttpClientService } from './http-client.service';
 import { Observable } from 'rxjs';

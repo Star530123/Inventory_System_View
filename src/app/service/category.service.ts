@@ -1,10 +1,10 @@
-import { UpdateCategoryReq } from './../model/category/UpdateCategoryReq';
+import { UpdateCategoryReq } from './../model/category/update-category/UpdateCategoryReq';
 import { Observable } from 'rxjs';
 import { NewCategoryRes } from './../model/new-category/NewCategoryRes';
 import { NewCategoryReq } from './../model/new-category/NewCategoryReq';
 import { HttpClientService } from './http-client.service';
 import { Injectable } from '@angular/core';
-import { UpdateCategoryRes } from '../model/category/UpdateCategoryRes';
+import { UpdateCategoryRes } from '../model/category/update-category/UpdateCategoryRes';
 
 @Injectable({
   providedIn: 'root'
