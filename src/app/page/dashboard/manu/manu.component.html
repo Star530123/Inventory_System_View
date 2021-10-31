@@ -1,1 +1,33 @@
-<p>manu works!</p>
+<h2>廠商管理</h2>
+<div class="manage-page">
+  <div class="page-top">
+    廠商名稱 : <input [(ngModel)]="manuKeyword"/>
+    <button class="inquiry-button" (click)="inquiry()">查詢</button>
+    <a type="button" routerLink="./newManu">
+      <button class="add-page-button">新增廠商</button>
+    </a>
+  </div>
+  <div class="page-body" *ngIf="isShowResult">
+    <div *ngIf="categoryList.length == 0">
+        查無資料
+    </div>
+    <table *ngIf="categoryList.length != 0">
+      <thead>
+        <tr>
+          <th>廠商序號</th>
+          <th>廠商名稱</th>
+          <th>功能</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categoryList">
+          <td></td>
+          <td></td>
+          <td>
+            <button (click)="delete(1)">刪除</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

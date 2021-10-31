@@ -1,0 +1,20 @@
+<h2>廠商管理 > 新增廠商</h2>
+<div class="manage-page">
+  <div class="page-top" [formGroup]="form">
+    <div>
+      廠商名稱 : <input formControlName="manuName" />
+    </div>
+    <div>
+      廠商國籍 : <input formControlName="nation" />
+    </div>
+    <div>
+      使用幣別 : <input formControlName="currency" />
+    </div>
+  </div>
+</div>
+<div>
+  <button class="add-button" (click)="addManu()">新增</button>
+</div>
+<div>
+  <button class="back-button" (click)="goBack()">返回</button>
+</div>

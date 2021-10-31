@@ -1,12 +1,15 @@
-import { ManuComponent } from './manu.component';
-import { ManuModule } from './manu.module';
+import { NewManuComponent } from './new-manu/new-manu.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { ManuComponent } from './manu.component';
 
-const routes: Routes = [{ path: '', component: ManuComponent }];
+const routes: Routes = [
+  { path: '', component: ManuComponent },
+  { path: 'newManu', component: NewManuComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ManuRoutingModule { }
+export class ManuRoutingModule {}
