@@ -2,8 +2,8 @@ import { DeleteCategoryRes } from './../model/category/delete-category/DeleteCat
 import { DeleteCategoryReq } from './../model/category/delete-category/DeleteCategoryReq';
 import { UpdateCategoryReq } from './../model/category/update-category/UpdateCategoryReq';
 import { Observable } from 'rxjs';
-import { NewCategoryRes } from './../model/new-category/NewCategoryRes';
-import { NewCategoryReq } from './../model/new-category/NewCategoryReq';
+import { NewCategoryRes } from '../model/category/new-category/NewCategoryRes';
+import { NewCategoryReq } from '../model/category/new-category/NewCategoryReq';
 import { HttpClientService } from './http-client.service';
 import { Injectable } from '@angular/core';
 import { UpdateCategoryRes } from '../model/category/update-category/UpdateCategoryRes';

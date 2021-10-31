@@ -1,7 +1,7 @@
 import { LoginRes } from '../model/login/LoginRes';
 import { LoginReq } from '../model/login/LoginReq';
-import { NewUserRes } from '../model/category/create-account/NewUserRes';
-import { NewUserReq } from '../model/category/create-account/NewUserReq';
+import { NewUserRes } from '../model/create-account/NewUserRes';
+import { NewUserReq } from '../model/create-account/NewUserReq';
 import { Observable } from 'rxjs';
 import { HttpClientService } from './http-client.service';
 import { Injectable } from '@angular/core';
