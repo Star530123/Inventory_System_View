@@ -7,27 +7,29 @@
       <button class="add-page-button">新增廠商</button>
     </a>
   </div>
-  <div class="page-body" *ngIf="isShowResult">
-    <div *ngIf="categoryList.length == 0">
-        查無資料
-    </div>
-    <table *ngIf="categoryList.length != 0">
-      <thead>
-        <tr>
-          <th>廠商序號</th>
-          <th>廠商名稱</th>
-          <th>功能</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let category of categoryList">
-          <td></td>
-          <td></td>
-          <td>
-            <button (click)="delete(1)">刪除</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+</div>
+<div class="page-body" *ngIf="isShowResult">
+  <div *ngIf="manuList.length == 0">
+      查無資料
   </div>
+  <table *ngIf="manuList.length != 0">
+    <thead>
+      <tr>
+        <th>廠商序號</th>
+        <th>廠商名稱</th>
+        <th>使用幣別</th>
+        <th>功能</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let manu of manuList">
+        <td>{{ manu.manuSeq }}</td>
+        <td>{{ manu.manuName }}</td>
+        <td>{{ manu.currency }}</td>
+        <td>
+          <button (click)="delete(1)">刪除</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

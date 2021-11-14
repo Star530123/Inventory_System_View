@@ -3,6 +3,8 @@ import { CategoryListReq } from '../model/common/category-list/CategoryListReq';
 import { Injectable } from '@angular/core';
 import { HttpClientService } from './http-client.service';
 import { Observable } from 'rxjs';
+import { ManuListReq } from '../model/common/manu-list/ManuListReq';
+import { ManuListRes } from '../model/common/manu-list/ManuListRes';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +16,9 @@ export class CommonService {
 
   categoryList(req: CategoryListReq): Observable<CategoryListRes[]> {
     return this.http.postApi(this.apiUrl + 'categoryList', req);
+  }
+
+  manuList(req: ManuListReq): Observable<ManuListRes[]> {
+    return this.http.postApi(this.apiUrl + 'manuList', req);
   }
 }
