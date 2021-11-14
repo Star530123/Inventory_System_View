@@ -1,3 +1,4 @@
+import { ManuService } from './../../../service/manu.service';
 import { CommonService } from './../../../service/common.service';
 import { Component, OnInit } from '@angular/core';
 import { ManuListRes } from 'src/app/model/common/manu-list/ManuListRes';
@@ -11,7 +12,10 @@ export class ManuComponent implements OnInit {
   manuKeyword = '';
   isShowResult = false;
   manuList: ManuListRes[] = [];
-  constructor(private commonService: CommonService) {}
+  constructor(
+    private commonService: CommonService,
+    private manuService: ManuService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -24,5 +28,12 @@ export class ManuComponent implements OnInit {
     });
   }
 
-  delete(manuSeq: number): void {}
+  delete(manuSeq: number): void {
+    this.manuService.deleteManu({ manuSeq }).subscribe((result) => {
+      if (result.isSuccess) {
+        alert('刪除成功!');
+        this.inquiry();
+      }
+    });
+  }
 }
