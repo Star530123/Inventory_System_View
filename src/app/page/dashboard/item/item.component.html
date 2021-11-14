@@ -1,1 +1,38 @@
-<p>item works!</p>
+<h2>項目管理</h2>
+<div class="manage-page">
+  <div class="page-top">
+    項目名稱 : <input [(ngModel)]="itemKeyword" />
+    <button class="inquiry-button" (click)="inquiry()">查詢</button>
+    <a type="button" routerLink="./newCategory">
+      <button class="add-page-button">新增項目</button>
+    </a>
+  </div>
+</div>
+<div class="page-body" *ngIf="isShowResult">
+  <div *ngIf="itemList.length == 0">
+    查無資料
+  </div>
+  <table *ngIf="itemList.length != 0">
+    <thead>
+      <tr>
+        <th>項目序號</th>
+        <th>類別名稱</th>
+        <th>項目名稱</th>
+        <th>功能</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let category of itemList">
+        <tr *ngFor="let item of category.items">
+          <td>{{ item.itemSeq }}</td>
+          <td>{{ category.categoryName }}</td>
+          <td>{{ item.itemName }}</td>
+          <td>
+            <button (click)="update()">更新</button>
+            <button (click)="delete()">刪除</button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
