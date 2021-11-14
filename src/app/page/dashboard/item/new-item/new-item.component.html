@@ -1,0 +1,19 @@
+<h2>項目管理 > 新增項目</h2>
+<div class="manage-page">
+  <div class="page-top" [formGroup]="form">
+    <div>
+      類別 : <select formControlName="categorySeq">
+        <option *ngFor="let category of categoryList" [value]="category.categorySeq">{{category.categoryName}}</option>
+      </select>
+    </div>
+    <div>
+      項目名稱 : <input formControlName="itemName" />
+    </div>
+  </div>
+</div>
+<div>
+  <button class="add-button" (click)="addItem()">新增</button>
+</div>
+<div>
+  <button class="back-button" (click)="goBack()">返回</button>
+</div>
