@@ -1,3 +1,4 @@
+import { ItemService } from './../../../service/item.service';
 import { Path } from 'src/app/path';
 import { CommonService } from './../../../service/common.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +14,11 @@ export class ItemComponent implements OnInit {
   itemKeyword = '';
   isShowResult = false;
   itemList: ItemListRes[] = [];
-  constructor(private commonService: CommonService, private router: Router) {}
+  constructor(
+    private commonService: CommonService,
+    private router: Router,
+    private itemService: ItemService
+  ) {}
 
   ngOnInit(): void {}
   inquiry(): void {
@@ -38,5 +43,12 @@ export class ItemComponent implements OnInit {
     });
   }
 
-  delete(): void {}
+  delete(itemSeq: number): void {
+    this.itemService.deleteItem({ itemSeq }).subscribe((result) => {
+      if (result.isSuccess) {
+        alert('刪除成功!');
+        this.inquiry();
+      }
+    });
+  }
 }

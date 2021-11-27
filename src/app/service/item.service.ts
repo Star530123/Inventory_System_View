@@ -5,6 +5,8 @@ import { HttpClientService } from './http-client.service';
 import { Injectable } from '@angular/core';
 import { UpdateItemReq } from '../model/item/update-item/UpdateItemReq';
 import { UpdateItemRes } from '../model/item/update-item/UpdateItemRes';
+import { DeleteItemReq } from '../model/item/delete-item/DeleteItemReq';
+import { DeleteItemRes } from '../model/item/delete-item/DeleteItemRes';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +22,9 @@ export class ItemService {
 
   updateItem(req: UpdateItemReq): Observable<UpdateItemRes> {
     return this.http.postApi(this.apiUrl + 'updateItem', req);
+  }
+
+  deleteItem(req: DeleteItemReq): Observable<DeleteItemRes> {
+    return this.http.postApi(this.apiUrl + 'deleteItem', req);
   }
 }
