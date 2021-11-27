@@ -84,12 +84,12 @@ export class GoodsComponent implements OnInit {
     );
   }
 
-  delete(itemSeq: number): void {
-    // this.itemService.deleteItem({ itemSeq }).subscribe((result) => {
-    //   if (result.isSuccess) {
-    //     alert('刪除成功!');
-    //     this.inquiry();
-    //   }
-    // });
+  delete(goodsSeq: number): void {
+    this.goodsService.deleteGoods({ goodsSeq }).subscribe((result) => {
+      if (result.isSuccess) {
+        alert('刪除成功!');
+        this.inquiry();
+      }
+    });
   }
 }
