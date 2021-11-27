@@ -1,0 +1,79 @@
+<h2>貨物管理 > 新增貨物</h2>
+<div class="manage-page">
+  <table style="border: solid;" cellpadding="10" [formGroup]="form">
+    <tr>
+      <th>貨物名稱:<br>(項目 + 特徵 + 尺寸)</th>
+      <td>
+        <div><b> 名稱 : {{ goodsName }}</b></div>
+        <div>特徵<input formControlName="feature" (keyup)="goodsNameOnChange()"></div>
+        <div>尺寸<input formControlName="size" (keyup)="goodsNameOnChange()"></div>
+      </td>
+    </tr>
+    <tr>
+      <th>貨物分類</th>
+      <td>
+        <div>類別
+          <select (change)="categoryOnChange($event)">
+            <option></option>
+            <option *ngFor="let category of categoryList" [value]="category.categorySeq">{{ category.categoryName }}
+            </option>
+          </select>
+        </div>
+        <div>項目
+          <select formControlName="itemSeq" (change)="goodsNameOnChange()">
+            <option *ngFor="let item of itemList" [value]="item.itemSeq">{{ item.itemName }}</option>
+          </select>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>進貨來源(廠商)</th>
+      <td>
+        <select formControlName="manuSeq" (ngModelChange)="manuOnChange($event)">
+          <option *ngFor="let manu of manuList" [value]="manu.manuSeq">{{ manu.manuName }}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>一份數量</th>
+      <td><input type="number" formControlName="perQuantity" (keyup)="amountOnChange()"></td>
+    </tr>
+    <tr>
+      <th>進貨數量</th>
+      <td><input type="number" formControlName="amount" (keyup)="amountOnChange()"></td>
+    </tr>
+    <tr>
+      <th>總份數</th>
+      <td>{{ totalAmount }}份</td>
+    </tr>
+    <tr>
+      <th>台幣成本單價</th>
+      <td><span><input type="number" formControlName="twdUnitPrice" (keyup)="twdOnChange()"> 總價 : {{ twdTotal }} 元</span></td>
+    </tr>
+    <tr *ngIf="checkCurrency()">
+      <th>外幣單價</th>
+      <td><span><input type="number" formControlName="currencyUnitPrice" (keyup)="curOnChange()"> 總價 : {{ curTotal }} <span> {{ manu?.currency }} </span> </span></td>
+    </tr>
+    <tr>
+      <th>進貨日期</th>
+      <td><input formControlName="purchaseTime"></td>
+    </tr>
+    <tr>
+      <th>關稅</th>
+      <td><input type="number" formControlName="tariff"></td>
+    </tr>
+    <tr>
+      <th>運費</th>
+      <td><input type="number" formControlName="shippingFee"></td>
+    </tr>
+  </table>
+</div>
+<div style="margin-top: 20px;">
+  總價格 (台幣總價 + 關稅 + 運費): {{ twdTotal + this.form.value.tariff + this.form.value.shippingFee}}
+</div>
+<div>
+  <button class="add-button" (click)="newGoods()">新增</button>
+</div>
+<div>
+  <button class="back-button" (click)="goBack()">返回</button>
+</div>

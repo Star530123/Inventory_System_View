@@ -1,3 +1,4 @@
+import { UtilService } from './../../../service/util.service';
 import { ManuListRes } from 'src/app/model/common/manu-list/ManuListRes';
 import { FormGroup, FormControl } from '@angular/forms';
 import { QueryGoodsRes } from './../../../model/goods/query-goods/QueryGoodsRes';
@@ -33,7 +34,7 @@ export class GoodsComponent implements OnInit {
   constructor(
     private commonService: CommonService,
     private router: Router,
-    private itemService: ItemService,
+    private utilService: UtilService,
     private goodsService: GoodsService
   ) {}
 
@@ -60,28 +61,15 @@ export class GoodsComponent implements OnInit {
   }
 
   getCategoryName(categorySeq: number): string {
-    return (
-      this.categoryList?.find(
-        (category) => category.categorySeq === Number(categorySeq)
-      )?.categoryName || String(categorySeq)
-    );
+    return this.utilService.getCategoryName(this.categoryList, categorySeq);
   }
 
   getItemName(itemSeq: number): string {
-    return (
-      this.categoryList
-        .map((category) => category.items)
-        .reduce((pre, cur) => pre.concat(cur), [])
-        .find((item) => item.itemSeq === Number(itemSeq))?.itemName ||
-      String(itemSeq)
-    );
+    return this.utilService.getItemName(this.categoryList, itemSeq);
   }
 
   getManuName(manuSeq: number): string {
-    return (
-      this.manuList.find((manu) => manu.manuSeq === Number(manuSeq))
-        ?.manuName || String(manuSeq)
-    );
+    return this.utilService.getManuName(this.manuList, manuSeq);
   }
 
   delete(goodsSeq: number): void {
