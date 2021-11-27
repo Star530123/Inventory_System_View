@@ -1,6 +1,8 @@
+import { Path } from 'src/app/path';
 import { CommonService } from './../../../service/common.service';
 import { Component, OnInit } from '@angular/core';
 import { ItemListRes } from 'src/app/model/common/item-list/ItemListRes';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-item',
@@ -11,7 +13,7 @@ export class ItemComponent implements OnInit {
   itemKeyword = '';
   isShowResult = false;
   itemList: ItemListRes[] = [];
-  constructor(private commonService: CommonService) {}
+  constructor(private commonService: CommonService, private router: Router) {}
 
   ngOnInit(): void {}
   inquiry(): void {
@@ -26,6 +28,15 @@ export class ItemComponent implements OnInit {
     });
   }
 
-  update(): void {}
+  update(category: ItemListRes, item: any): void {
+    this.router.navigate([Path.updateItem], {
+      state: {
+        item,
+        categorySeq: category.categorySeq,
+        categoryName: category.categoryName,
+      },
+    });
+  }
+
   delete(): void {}
 }

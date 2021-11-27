@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { ItemRoutingModule } from './item-routing.module';
 import { ItemComponent } from './item.component';
 import { NewItemComponent } from './new-item/new-item.component';
+import { UpdateItemComponent } from './update-item/update-item.component';
 
 
 
 @NgModule({
   declarations: [
     ItemComponent,
-    NewItemComponent
+    NewItemComponent,
+    UpdateItemComponent
   ],
   imports: [
     CommonModule,

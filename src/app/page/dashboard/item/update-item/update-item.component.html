@@ -1,0 +1,20 @@
+<h2>項目管理 > 更新項目</h2>
+<div class="manage-page">
+  <div class="page-top">
+    <div>
+      類別 : {{ oldItem.categoryName }}
+    </div>
+    <div>
+      舊項目名稱 : {{ oldItem.item.itemName }}
+    </div>
+    <div>
+      新項目名稱 : <input [(ngModel)]="itemName" />
+    </div>
+  </div>
+</div>
+<div>
+  <button class="add-button" (click)="updateItem()">更新</button>
+</div>
+<div>
+  <button class="back-button" (click)="goBack()">返回</button>
+</div>
