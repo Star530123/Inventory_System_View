@@ -1,1 +1,56 @@
-<p>goods works!</p>
+<h2>貨物管理</h2>
+<div class="manage-page">
+  <div class="page-top">
+    <div [formGroup]="form">
+      <div>
+        貨物名稱 : <input formControlName="goodsNameLike" />
+      </div>
+      <div>
+        類別 : <select formControlName="categorySeq" (ngModelChange)="onChange($event)">
+          <option></option>
+          <option *ngFor="let category of categoryList" [value]="category.categorySeq">{{ category.categoryName }}</option>
+        </select>
+      </div>
+      <div>
+        項目 : <select formControlName="itemSeq">
+          <option *ngFor="let item of itemList" [value]="item.itemSeq">{{ item.itemName }}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <button class="inquiry-button" (click)="inquiry()" style="align-self: center;">查詢</button>
+  <a type="button" routerLink="./newGoods" style="align-self: center;">
+    <button class="add-page-button">新增貨物</button>
+  </a>
+</div>
+<div class="page-body" *ngIf="isShowResult">
+  <div *ngIf="goodsList.length == 0">
+    查無資料
+  </div>
+  <table *ngIf="goodsList.length != 0">
+    <thead>
+      <tr>
+        <th>貨物名稱</th>
+        <th>類別</th>
+        <th>項目</th>
+        <th>台幣成本單價</th>
+        <th>現在數量</th>
+        <th>進貨來源(廠商)</th>
+        <th>功能</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let goods of goodsList">
+        <td>{{ goods.goodsName }}</td>
+        <td>{{ getCategoryName(goods.categorySeq) }}</td>
+        <td>{{ getItemName(goods.itemSeq) }}</td>
+        <td>{{ goods.twdUnitPrice }}</td>
+        <td>{{ goods.amount }}</td>
+        <td>{{ getManuName(goods.manuSeq) }}</td>
+        <td>
+          <button (click)="delete(goods.goodsSeq)">刪除</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
